@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://travel-log-app.herokuapp.com/'
+    production: 'https://travel-log-app.herokuapp.com/',
+    development: 'http://localhost:4741'
   }
 }
 

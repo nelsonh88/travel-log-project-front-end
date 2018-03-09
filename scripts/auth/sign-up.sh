@@ -7,7 +7,9 @@ curl --include --request POST "https://travel-log-app.herokuapp.com/sign-up" \
   "credentials": {
     "email": "'"${EMAIL}"'",
     "password": "'"${PASSWORD}"'",
-    "password_confirmation": "'"${PASSWORD}"'"
+    "password_confirmation": "'"${PASSWORD}"'",
+    "first_name": "'"${FIRST_NAME}"'",
+      "last_name": "'"${LAST_NAME}"'"
   }
 }'
 echo
