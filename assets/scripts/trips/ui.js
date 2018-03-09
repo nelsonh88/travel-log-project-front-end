@@ -15,14 +15,26 @@ const createTripFailure = function (error) {
 }
 
 const getTripsSuccess = function (data) {
-  $('#tripMessage').text('Created a trip Successfully!')
+  $('#tripMessage').text('Brought back all trips successfully!')
   $('#tripMessage').css('background-color', 'green')
   console.log(data)
 }
 
 const getTripsFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on creating a trip!')
+  $('#tripMessage').text('Error on getting trips!')
+  $('#tripMessage').css('background-color', 'red')
+}
+
+const getTripSuccess = function (data) {
+  $('#tripMessage').text('Brought back a trip successfully!')
+  $('#tripMessage').css('background-color', 'green')
+  console.log(data)
+}
+
+const getTripFailure = function (error) {
+  console.log(error)
+  $('#tripMessage').text('Error on getting trip!')
   $('#tripMessage').css('background-color', 'red')
 }
 
@@ -30,5 +42,7 @@ module.exports = {
   createTripSuccess,
   createTripFailure,
   getTripsSuccess,
-  getTripsFailure
+  getTripsFailure,
+  getTripSuccess,
+  getTripFailure
 }

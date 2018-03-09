@@ -26,7 +26,19 @@ const getTrips = function () {
   })
 }
 
+const getTrip = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/trips/' + id,
+    method: 'GET',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createTrip,
-  getTrips
+  getTrips,
+  getTrip
 }
