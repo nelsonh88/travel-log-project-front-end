@@ -12,6 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+
       <h1>API Token Auth</h1>
       <p id="message"></p>
       <form id="sign-up" class="border">
@@ -44,6 +45,19 @@
     <form id="sign-out" class="border">
       <legend>sign-out</legend>
       <input type="submit" value="Sign out!">
+    </form>
+
+    <h1>CRUD</h1>
+    <p id="tripMessage"></p>
+    <legend>Create Trip</legend>
+    <form id="create-trip" class="border">
+      <fieldset>
+        <input type="text" name="trip[location_name]" placeholder="Location Name">
+        <input type="text" name="trip[travel_mates]" placeholder="Travel Mates">
+        <input type="text" name="trip[date]" placeholder="yyyy-mm-dd">
+        <input type="text" name="trip[description]" placeholder="Trip Description">
+        <input type="submit" value="Create a Trip!">
+      </fieldset>
     </form>
 
     </body>
