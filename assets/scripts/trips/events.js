@@ -12,8 +12,16 @@ const onCreateTrip = function (event) {
     .catch(ui.createTripFailure)
 }
 
+const onGetTrips = function (event) {
+  event.preventDefault()
+  api.getTrips()
+    .then(ui.getTripsSuccess)
+    .catch(ui.getTripsFailure)
+}
+
 const addHandlers = () => {
   $('#create-trip').on('submit', onCreateTrip)
+  $('#get-trips').on('submit', onGetTrips)
 }
 
 module.exports = {
