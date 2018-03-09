@@ -49,9 +49,21 @@ const updateTrip = function (data) {
   })
 }
 
+const deleteTrip = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/trips/' + id,
+    method: 'DELETE',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createTrip,
   getTrips,
   getTrip,
-  updateTrip
+  updateTrip,
+  deleteTrip
 }

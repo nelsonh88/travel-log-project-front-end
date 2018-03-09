@@ -32,10 +32,18 @@ const onGetTrip = function (event) {
 const onUpdateTrip = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const trip = data.trip
   api.updateTrip(data)
     .then(ui.updateTripSuccess)
     .catch(ui.updateTripFailure)
+}
+
+const onDeleteTrip = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const trip = data.trip
+  api.deleteTrip(trip.id)
+    .then(ui.deleteTripSuccess)
+    .catch(ui.deleteTripFailure)
 }
 
 const addHandlers = () => {
@@ -43,6 +51,7 @@ const addHandlers = () => {
   $('#get-trips').on('submit', onGetTrips)
   $('#get-trip').on('submit', onGetTrip)
   $('#update-trip').on('submit', onUpdateTrip)
+  $('#delete-trip').on('submit', onDeleteTrip)
 }
 
 module.exports = {
