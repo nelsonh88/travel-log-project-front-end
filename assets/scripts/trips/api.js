@@ -37,8 +37,21 @@ const getTrip = function (id) {
   })
 }
 
+const updateTrip = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/trips/' + data.trip.id,
+    method: 'PATCH',
+    headers: {
+      ContentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   createTrip,
   getTrips,
-  getTrip
+  getTrip,
+  updateTrip
 }

@@ -28,10 +28,21 @@ const onGetTrip = function (event) {
     .then(ui.getTripSuccess)
     .catch(ui.getTripFailure)
 }
+
+const onUpdateTrip = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const trip = data.trip
+  api.updateTrip(data)
+    .then(ui.updateTripSuccess)
+    .catch(ui.updateTripFailure)
+}
+
 const addHandlers = () => {
   $('#create-trip').on('submit', onCreateTrip)
   $('#get-trips').on('submit', onGetTrips)
   $('#get-trip').on('submit', onGetTrip)
+  $('#update-trip').on('submit', onUpdateTrip)
 }
 
 module.exports = {
