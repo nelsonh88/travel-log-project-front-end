@@ -4,6 +4,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up Successfully!')
   $('#message').css('background-color', 'green')
+  $('form').trigger('reset')
   console.log(data)
 }
 
@@ -11,11 +12,13 @@ const signUpFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing up!')
   $('#message').css('background-color', 'red')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   $('#message').text('Signed in Successfully!')
   $('#message').css('background-color', 'green')
+  $('form').trigger('reset')
   console.log(data)
   // below is for the token
   store.user = data.user
@@ -25,17 +28,20 @@ const signInFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing in!')
   $('#message').css('background-color', 'red')
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function (data) {
   $('#message').text('Change password Successfully!')
   $('#message').css('background-color', 'green')
+  $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
   $('#message').text('Error on changing password!')
   $('#message').css('background-color', 'red')
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function (data) {
