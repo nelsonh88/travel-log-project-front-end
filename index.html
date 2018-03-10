@@ -12,28 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <div class="wrapper">
+      <header>
+        <div class="brand">
+          <img src="./images/footprint1.svg" alt="footprint logo">
+          <h1>Geo-Footprint</h1>
+        </div>
+        <ul class="mainmenu">
+          <li><a href="#">Menu</a></li>
+          <ul class="submenu">
+            <li><a href="#">Sign Out</a></li>
+            <li><a href="#">Change<br/>Password</a></li>
+          </ul>
+        </ul>
+        <section class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum mauris sed tincidunt blandit. Pellentesque arcu orci, porttitor a blandit in, accumsan sit amet sapien.</section>
+      </header>
 
-      <h1>API Token Auth</h1>
       <p id="message"></p>
+      <div class="pageContent">
       <form id="sign-up" class="border">
         <fieldset>
           <legend>Sign up!</legend>
-          <input type="text" name="credentials[first_name]" placeholder="First Name">
-          <input type="text" name="credentials[last_name]" placeholder="Last Name">
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign up!">
+            <div class="form-group">
+              <label for="signup-firstname">First Name</label>
+              <input id="signup-firstname" class="form-control" type="text" name="credentials[first_name]" placeholder="First Name">
+              <label for="signup-lastname">Last Name</label>
+              <input id="signup-lastname" class="form-control" type="text" name="credentials[last_name]" placeholder="Last Name">
+              <label for="signup-email">Email</label>
+              <input id="signup-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" class="form-control" type="password" name="credentials[password]" placeholder="Password">
+              <label for="signup-confrim-password">Confirm Password</label>
+              <input id="signup-confrim-password" class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Sign up!">
         </fieldset>
       </form>
         <form id="sign-in" class="border">
         <fieldset>
           <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="password">
-          <input type="submit" value="Sign-in">
+          <div class="form-group">
+            <label for="signin-email">Email</label>
+            <input id="signin-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
+            <label for="signin-password">Password</label>
+            <input id="signin-password" class="form-control" type="password" name="credentials[password]" placeholder="password">
+          </div>
+          <input class="btn btn-primary" type="submit" value="Sign-in">
         </fieldset>
       </form>
+    </div>
       <form id="change-password" class="border">
         <fieldset>
           <legend>change-password</legend>
@@ -47,11 +74,10 @@
       <input type="submit" value="Sign out!">
     </form>
 
-    <h1>CRUD</h1>
     <p id="tripMessage"></p>
-    <legend>Create Trip</legend>
     <form id="create-trip" class="border">
       <fieldset>
+        <legend>Create Trip</legend>
         <input type="text" name="trip[location_name]" placeholder="Location Name">
         <input type="text" name="trip[travel_mates]" placeholder="Travel Mates">
         <input type="text" name="trip[date]" placeholder="yyyy-mm-dd">
@@ -60,24 +86,24 @@
       </fieldset>
     </form>
 
-    <legend>Look Up All Past Trips</legend>
     <form id="get-trips" class="border">
       <fieldset>
+        <legend>Look Up All Past Trips</legend>
         <input type="submit" value="Get all Trips!">
       </fieldset>
     </form>
 
-    <legend>Look Up A Past Trip</legend>
     <form id="get-trip" class="border">
       <fieldset>
+        <legend>Look Up A Past Trip</legend>
         <input type="text" name="trip[id]" placeholder="Look Up By ID">
         <button type="submit" value="border">Get Trip</button>
       </fieldset>
     </form>
 
-    <legend>Update a Trip</legend>
     <form id="update-trip" class="border">
       <fieldset>
+        <legend>Update a Trip</legend>
         <input type="text" name="trip[id]" placeholder="Trip ID">
         <input type="text" name="trip[location_name]" placeholder="Location Name">
         <input type="text" name="trip[travel_mates]" placeholder="Travel Mates">
@@ -87,14 +113,14 @@
       </fieldset>
     </form>
 
-    <legend>Delete a Trip</legend>
     <form id="delete-trip" class="border">
       <fieldset>
+        <legend>Delete a Trip</legend>
         <input type="text" name="trip[id]" placeholder="Trip ID Here">
         <input type="submit" value="Delete a Trip!">
       </fieldset>
     </form>
 
-
+      </div>
     </body>
 </html>

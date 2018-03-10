@@ -1,2 +1,94 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.brand img{
+  width: 36px;
+}
+
+.brand h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 2em;
+  margin-top: .4em;
+}
+
+.brand {
+    text-align: left;
+}
+
+body.container-fluid {
+    padding: 0;
+    background-image: url('http://localhost:7165/images/map.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 140vh;
+}
+
+.wrapper {
+    margin: 1em;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0 1em 1em 1em;
+    border: 1px solid #999;
+}
+
+.mainmenu, .submenu {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+  }
+
+  .mainmenu {
+      position: absolute;
+      right: 1em;
+      top: 1em;
+      background: lightgray;
+  }
+
+.mainmenu > li {
+      background: lightgray;
+      padding: .5em;
+      border-bottom: 1px solid #999;
+  }
+
+  ul.submenu {
+    display: none;
+}
+
+ul.submenu li {
+    padding: .5em;
+    background: lightgray;
+    border-bottom: 1px solid #999;
+}
+
+.mainmenu li {
+    line-height: 1.2;
+    font-size: 1.2em;
+}
+
+header {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #999;
+}
+
+#change-password,
+#sign-out,
+#create-trip,
+#get-trips,
+#get-trip,
+#update-trip,
+#delete-trip {
+  display: none;
+}
+
+.pageContent {
+    width: 100%;
+    margin: 0px auto;
+    padding: 1em 0;
+}
+
+.pageContent form {
+    border: 1px solid #999;
+    margin-bottom: 2em;
+    padding: 1em;
+    background: #FFF;
+}
