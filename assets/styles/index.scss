@@ -9,26 +9,25 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   display: inline-block;
   vertical-align: middle;
   font-size: 2em;
-  margin-top: .4em;
 }
 
 .brand {
-    text-align: left;
+    text-align: center;
 }
 
 body.container-fluid {
     padding: 0;
     background-image: url('http://localhost:7165/images/map.png');
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 140vh;
+    background-repeat: repeat-y;
 }
 
 .wrapper {
     margin: 1em;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
     padding: 0 1em 1em 1em;
     border: 1px solid #999;
+    height: auto;
 }
 
 .mainmenu, .submenu {
@@ -41,22 +40,23 @@ body.container-fluid {
       position: absolute;
       right: 1em;
       top: 1em;
-      background: lightgray;
+      display: none;
   }
 
 .mainmenu > li {
-      background: lightgray;
       padding: .5em;
-      border-bottom: 1px solid #999;
   }
 
   ul.submenu {
     display: none;
+    margin-right: 0.5em;
+    border: 1px solid #999;
+    box-shadow: -3px 6px 12px 3px rgba(128,128,128,0.3);
+    background: #fff;
 }
 
 ul.submenu li {
     padding: .5em;
-    background: lightgray;
     border-bottom: 1px solid #999;
 }
 
@@ -70,13 +70,13 @@ header {
     border-bottom: 1px solid #999;
 }
 
-#change-password,
-#sign-out,
-#create-trip,
+// #change-password,
+// #sign-out,
 #get-trips,
 #get-trip,
-#update-trip,
-#delete-trip {
+// #update-trip,
+// #delete-trip
+{
   display: none;
 }
 
@@ -91,4 +91,73 @@ header {
     margin-bottom: 2em;
     padding: 1em;
     background: #FFF;
+}
+
+label {
+  margin-top: 1em;
+}
+
+a.btn.btn-primary {
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+section.lede {
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+legend {
+  padding: 0 0 .5em 0;
+}
+
+.logged-in .loginforms {
+  display: none;
+}
+
+#message {
+  display: none;
+}
+
+.appinfo {
+  display: none;
+}
+
+.logged-in .appinfo {
+  display: block;
+}
+
+.logged-in .mainmenu {
+  display: block;
+}
+#tripMessage {
+  display: none;
+}
+.alert {
+    padding: 5px 15px;
+    margin-bottom: 20px;
+    margin-top: .5em;
+}
+
+label.requiredfield {
+  color: #cc0000;
+}
+
+.tablewrapper {
+    max-height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 2em;
+    border: 1px solid #999;
+    padding: .5em;
+}
+
+.pageContent .modal-body form {
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
 }

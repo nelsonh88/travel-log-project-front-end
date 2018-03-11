@@ -19,20 +19,25 @@
           <h1>Geo-Footprint</h1>
         </div>
         <ul class="mainmenu">
-          <li><a href="#">Menu</a></li>
+          <li>
+            <img src="./images/menu.svg">
+            <!-- <a href="#">Menu</a> -->
+          </li>
           <ul class="submenu">
-            <li><a href="#">Sign Out</a></li>
-            <li><a href="#">Change<br/>Password</a></li>
+            <li><a id="sign-out" href="#">Sign Out</a></li>
+            <li><a data-toggle="modal" data-target="#changepassword-modal" href="#">Change<br/>Password</a></li>
           </ul>
         </ul>
-        <section class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum mauris sed tincidunt blandit. Pellentesque arcu orci, porttitor a blandit in, accumsan sit amet sapien.</section>
+          <p id="message" class="alert alert-success" role="alert"></p>
+        <section class="lede">Welcome to Geo-Footprint, the application that lets you store your travel adventures.</section>
       </header>
 
-      <p id="message"></p>
       <div class="pageContent">
-      <form id="sign-up" class="border">
+        <div class="loginforms">
+        <p>Don't have an account? <a class="" data-toggle="collapse" href="#sign-up" role="button" aria-expanded="false" aria-controls="collapseExample">Sign-Up!</a>
+        </p>
+      <form id="sign-up" class="border collapse">
         <fieldset>
-          <legend>Sign up!</legend>
             <div class="form-group">
               <label for="signup-firstname">First Name</label>
               <input id="signup-firstname" class="form-control" type="text" name="credentials[first_name]" placeholder="First Name">
@@ -50,46 +55,126 @@
       </form>
         <form id="sign-in" class="border">
         <fieldset>
-          <legend>Sign in!</legend>
-          <div class="form-group">
-            <label for="signin-email">Email</label>
-            <input id="signin-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
-            <label for="signin-password">Password</label>
-            <input id="signin-password" class="form-control" type="password" name="credentials[password]" placeholder="password">
-          </div>
-          <input class="btn btn-primary" type="submit" value="Sign-in">
+            <div class="form-group">
+              <legend>Sign in!</legend>
+              <label for="signin-email">Email</label>
+              <input id="signin-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
+              <label for="signin-password">Password</label>
+              <input id="signin-password" class="form-control" type="password" name="credentials[password]" placeholder="password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Sign-in">
         </fieldset>
       </form>
     </div>
-      <form id="change-password" class="border">
-        <fieldset>
-          <legend>change-password</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">
-        </fieldset>
-    </form>
-    <form id="sign-out" class="border">
-      <legend>sign-out</legend>
-      <input type="submit" value="Sign out!">
-    </form>
 
-    <p id="tripMessage"></p>
-    <form id="create-trip" class="border">
-      <fieldset>
-        <legend>Create Trip</legend>
-        <input type="text" name="trip[location_name]" placeholder="Location Name">
-        <input type="text" name="trip[travel_mates]" placeholder="Travel Mates">
-        <input type="text" name="trip[date]" placeholder="yyyy-mm-dd">
-        <input type="text" name="trip[description]" placeholder="Trip Description">
-        <input type="submit" value="Create a Trip!">
-      </fieldset>
-    </form>
+    <div class="appinfo">
+
+      <!-- Modal -->
+      <div class="modal fade" id="changepassword-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password-form" class="border">
+                <fieldset>
+                  <div class="form-group">
+                  <label class="requiredfield" for="change-password-oldpassword">* Old Password</label>
+                  <input id="change-password-oldpassword" class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+                  <label class="requiredfield" for="change-password-newpassword">* New Password</label>
+                  <input id="change-password-newpassword" class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+                </div>
+                <input id="change-password" class="btn btn-primary" type="submit" value="Change Password!">
+                </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn btn-primary" data-toggle="collapse" href="#create-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Log New Trip!</a>
+      <form id="create-trip" class="border collapse">
+        <p id="tripMessage" class="alert alert-success" role="alert"></p>
+        <fieldset>
+            <div class="form-group">
+          <legend>Enter Trip Details</legend>
+          <label for="create-trip-locationname">Location Name</label>
+          <input id="create-trip-locationname" class="form-control" type="text" name="trip[location_name]" placeholder="Where'd you go?">
+          <label for="create-trip-travemates">Travel Mates</label>
+          <input id="create-trip-travemates" class="form-control" type="text" name="trip[travel_mates]" placeholder="Names of people traveling with you">
+          <label for="create-trip-date">Trip Date</label>
+          <input id="create-trip-date" class="form-control" type="text" name="trip[date]" placeholder="yyyy-mm-dd">
+          <label for="create-trip-description">Trip Description</label>
+          <input id="create-trip-description" class="form-control" type="text" name="trip[description]" placeholder=" What did you do? visit? etc">
+          </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Save Trip!">
+      </form>
+
+<div class="past-trips">
+  <h3>Past Trips</h3>
+  <div class="tablewrapper">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Location</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody id='tabletarget'>
+  </tbody>
+</table>
+</div>
+</div>
+<a class="btn btn-primary" data-toggle="collapse" href="#update-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Trip!</a>
+
+<form id="update-trip" class="border collapse">
+  <fieldset>
+    <div class="form-group">
+    <legend>Update a Trip</legend>
+    <label class="requiredfield"for="update-trip-tripid">* Trip ID</label>
+    <input id="create-trip-tripid" class="form-control" type="text" name="trip[id]" placeholder="Trip ID">
+    <label for="update-trip-triplocationname">Location Name</label>
+    <input id="create-trip-triplocationname" class="form-control" type="text" name="trip[location_name]" placeholder="Location Name">
+    <label for="update-trip-triptravelmates">Travel Mates</label>
+    <input id="create-trip-triptravelmates" class="form-control" type="text" name="trip[travel_mates]" placeholder="Travel Mates">
+    <label for="update-trip-tripdate">Date</label>
+    <input id="create-trip-tripdate" class="form-control" type="text" name="trip[date]" placeholder="yyyy-mm-dd">
+    <label for="update-trip-tripdescription">Description</label>
+    <input id="create-trip-tripdescription" class="form-control" type="text" name="trip[description]" placeholder="Trip Description">
+</div>
+  </fieldset>
+  <input class="btn btn-primary" type="submit" value="Update a Trip!">
+
+</form>
+
+<a class="btn btn-primary" data-toggle="collapse" href="#delete-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Trip!</a>
+<form id="delete-trip" class="border collapse">
+  <fieldset>
+    <div class="form-group">
+    <legend>Delete a Trip</legend>
+    <label class="requiredfield"for="update-trip-tripid">* Trip ID</label>
+    <input id="delete-trip-tripdid" class="form-control" type="text" name="trip[id]" placeholder="Trip ID Here">
+</div>
+  </fieldset>
+  <input class="btn btn-primary" type="submit" value="Delete a Trip!">
+</form>
+
+    </div>
 
     <form id="get-trips" class="border">
       <fieldset>
         <legend>Look Up All Past Trips</legend>
-        <input type="submit" value="Get all Trips!">
+        <input id="getalltripsdata" type="submit" value="Get all Trips!">
       </fieldset>
     </form>
 
@@ -101,26 +186,7 @@
       </fieldset>
     </form>
 
-    <form id="update-trip" class="border">
-      <fieldset>
-        <legend>Update a Trip</legend>
-        <input type="text" name="trip[id]" placeholder="Trip ID">
-        <input type="text" name="trip[location_name]" placeholder="Location Name">
-        <input type="text" name="trip[travel_mates]" placeholder="Travel Mates">
-        <input type="text" name="trip[date]" placeholder="yyyy-mm-dd">
-        <input type="text" name="trip[description]" placeholder="Trip Description">
-        <input type="submit" value="Update a Trip!">
-      </fieldset>
-    </form>
-
-    <form id="delete-trip" class="border">
-      <fieldset>
-        <legend>Delete a Trip</legend>
-        <input type="text" name="trip[id]" placeholder="Trip ID Here">
-        <input type="submit" value="Delete a Trip!">
-      </fieldset>
-    </form>
-
+        </div>
       </div>
     </body>
 </html>
