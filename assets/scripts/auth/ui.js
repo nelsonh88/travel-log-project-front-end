@@ -4,12 +4,13 @@ const store = require('../store')
 // above is for the token as well
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up Successfully!')
+  $('#message').text('Congrats on signing up successfully! You are now signed in')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   $('body').addClass('logged-in')
   welcomeText(data)
   console.log(data)
+  $('#message').delay(3000).slideToggle()
   // store.user = data.user
 }
 
