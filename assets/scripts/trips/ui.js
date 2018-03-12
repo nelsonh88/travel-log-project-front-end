@@ -1,8 +1,8 @@
 // const store = require('../store')
 
 const createTripSuccess = function (data) {
-  $('#tripMessage').text('Created a trip Successfully!')
-  $('#tripMessage').show()
+  $('#message').text('Created a trip Successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   setTimeout("$('#getalltripsdata').trigger('click')",0)
   console.log(data)
@@ -10,14 +10,14 @@ const createTripSuccess = function (data) {
 
 const createTripFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on creating a trip!')
-  $('#tripMessage').css('background-color', 'red')
+  $('#message').text('Error on creating a trip!')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
 const getTripsSuccess = function (data) {
-  // $('#tripMessage').text('Brought back all trips successfully!')
-  // $('#tripMessage').css('background-color', 'green')
+  // $('#message').text('Brought back all trips successfully!')
+  // $('#message').css('background-color', 'green')
   console.log('getTripsSuccess: ', data.trips)
   // run foreach and build html output
   const tabletgt = document.getElementById('tabletarget')
@@ -39,33 +39,44 @@ const getTripsSuccess = function (data) {
     const cell3text = document.createTextNode(item.date)
     cell3.appendChild(cell3text)
     row.appendChild(cell3)
+
+    const cell4 = document.createElement('td')
+    const cell4text = document.createTextNode(item.travel_mates)
+    cell4.appendChild(cell4text)
+    row.appendChild(cell4)
+
+    const cell5 = document.createElement('td')
+    const cell5text = document.createTextNode(item.description)
+    cell5.appendChild(cell5text)
+    row.appendChild(cell5)
+
     tabletgt.appendChild(row)
   })
 }
 
 const getTripsFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on getting trips!')
-  $('#tripMessage').css('background-color', 'red')
+  $('#message').text('Error on getting trips!')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
 }
 
 const getTripSuccess = function (data) {
-  $('#tripMessage').text('Brought back a trip successfully!')
-  $('#tripMessage').css('background-color', 'green')
+  $('#message').text('Brought back a trip successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   console.log(data)
 }
 
 const getTripFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on getting trip!')
-  $('#tripMessage').css('background-color', 'red')
+  $('#message').text('Error on getting trip!')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
 const updateTripSuccess = function (data) {
-  $('#tripMessage').text('Updated a trip successfully!')
-  $('#tripMessage').css('background-color', 'green')
+  $('#message').text('Updated a trip successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   console.log(data)
   $('form').trigger('reset')
   setTimeout("$('#getalltripsdata').trigger('click')",0)
@@ -74,24 +85,23 @@ const updateTripSuccess = function (data) {
 
 const updateTripFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on updating trip!')
-  $('#tripMessage').css('background-color', 'red')
+  $('#message').text('Error on updating trip!')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
 const deleteTripSuccess = function (data) {
-  $('#tripMessage').text('Deleted trip successfully!')
-  $('#tripMessage').css('background-color', 'green')
+  $('#message').text('Deleted trip successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   console.log(data)
   $('form').trigger('reset')
   setTimeout("$('#getalltripsdata').trigger('click')",0)
-
 }
 
 const deleteTripFailure = function (error) {
   console.log(error)
-  $('#tripMessage').text('Error on deleting trip!')
-  $('#tripMessage').css('background-color', 'red')
+  $('#message').text('Error on deleting trip!')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 

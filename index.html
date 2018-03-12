@@ -10,6 +10,14 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <style>
+      body.container-fluid {
+          padding: 0;
+          // background-image: url(http://localhost:7165/images/bigmap.png);
+          background-attachment: fixed;
+          background-image: url('./images/bigmap.png');
+      }
+      </style>
     </head>
     <body class="container-fluid">
       <div class="wrapper">
@@ -128,6 +136,8 @@
       <th scope="col">ID</th>
       <th scope="col">Location</th>
       <th scope="col">Date</th>
+      <th scope="col">Buddies</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody id='tabletarget'>

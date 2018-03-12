@@ -15,11 +15,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
     text-align: center;
 }
 
-body.container-fluid {
-    padding: 0;
-    background-image: url('http://localhost:7165/images/map.png');
-    background-size: cover;
-    background-repeat: repeat-y;
+table td {
+    white-space: nowrap;
 }
 
 .wrapper {
@@ -169,4 +166,12 @@ label.requiredfield {
 
 h5#changepassword-modal-label {
     font-size: 21px;
+}
+
+@media screen and (min-width: 500px) {
+  .wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
