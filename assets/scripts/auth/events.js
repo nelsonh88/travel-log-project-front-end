@@ -23,7 +23,6 @@ const onSignIn = function () {
 }
 
 const onChangePassword = function (event) {
-  debugger
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
@@ -50,7 +49,7 @@ const toggleSubmenu = function () {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('click', onChangePassword)
+  $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
   $('.mainmenu li').on('click', toggleSubmenu)
 }

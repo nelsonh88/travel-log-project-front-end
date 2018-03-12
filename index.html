@@ -28,7 +28,7 @@
             <li><a data-toggle="modal" data-target="#changepassword-modal" href="#">Change<br/>Password</a></li>
           </ul>
         </ul>
-          <p id="message" class="alert alert-success" role="alert"></p>
+          <p id="message" class="alert" role="alert"></p>
         <section class="lede">Welcome to Geo-Footprint, the application that lets you store your travel adventures.</section>
       </header>
 
@@ -74,13 +74,13 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+              <h5 class="modal-title" id="changepassword-modal-label">Change Password</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <form id="change-password-form" class="border">
+              <form id="change-password" class="border">
                 <fieldset>
                   <div class="form-group">
                   <label class="requiredfield" for="change-password-oldpassword">* Old Password</label>
@@ -88,21 +88,21 @@
                   <label class="requiredfield" for="change-password-newpassword">* New Password</label>
                   <input id="change-password-newpassword" class="form-control" type="password" name="passwords[new]" placeholder="New Password">
                 </div>
-                <input id="change-password" class="btn btn-primary" type="submit" value="Change Password!">
+                <input class="btn btn-primary" type="submit" value="Change Password!">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </fieldset>
             </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            <!-- <div class="modal-footer"> -->
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
 
       <a class="btn btn-primary" data-toggle="collapse" href="#create-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Log New Trip!</a>
       <form id="create-trip" class="border collapse">
-        <p id="tripMessage" class="alert alert-success" role="alert"></p>
+        <p id="tripMessage" class="alert" role="alert"></p>
         <fieldset>
             <div class="form-group">
           <legend>Enter Trip Details</legend>

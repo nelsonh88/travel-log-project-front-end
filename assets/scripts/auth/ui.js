@@ -5,6 +5,7 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('#message').text('Signed up Successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   $('body').addClass('logged-in')
   console.log(data)
@@ -13,13 +14,13 @@ const signUpSuccess = function (data) {
 const signUpFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing up!')
-  $('#message').css('background-color', 'red')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
   $('#message').text('Signed in Successfully!')
-  $('#message').show()
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   $('body').addClass('logged-in')
   welcomeText(data)
@@ -27,7 +28,7 @@ const signInSuccess = function (data) {
   console.log(data.user.first_name)
   // below is for the token
   store.user = data.user
-  $('#message').delay(3000).slideToggle();
+  $('#message').delay(3000).slideToggle()
 }
 
 const welcomeText = function (data) {
@@ -42,20 +43,20 @@ const byeText = function (data) {
 const signInFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing in!')
-  $('#message').css('background-color', 'red')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function (data) {
   $('#message').text('Change password Successfully!')
-  $('#message').css('background-color', 'green')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
   $('#message').text('Error on changing password!')
-  $('#message').css('background-color', 'red')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
 }
 
@@ -67,7 +68,7 @@ const signOutSuccess = function (data) {
 const signOutFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing out!')
-  $('#message').css('background-color', 'red')
+  $('#message').removeClass('alert-success').addClass('alert-danger').show()
 }
 
 module.exports = {
