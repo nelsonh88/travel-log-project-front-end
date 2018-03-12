@@ -8,7 +8,9 @@ const signUpSuccess = function (data) {
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   $('body').addClass('logged-in')
+  welcomeText(data)
   console.log(data)
+  // store.user = data.user
 }
 
 const signUpFailure = function (error) {
