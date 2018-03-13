@@ -6,10 +6,8 @@ application.js
 _SpecRunner.html
 *.woff2
 *.woff
-*.svg
 *.ttf
 *.eot
-public/
 
 # Created by https://www.gitignore.io/api/osx,linux
 
