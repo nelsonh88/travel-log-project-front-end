@@ -4,12 +4,13 @@ const store = require('../store')
 // above is for the token as well
 
 const signUpSuccess = function (data) {
-  $('#message').text('Congrats on signing up successfully! You are now signed in')
+  $('#message').text('Congrats on signing up successfully! Please sign-in!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
-  $('body').addClass('logged-in')
-  welcomeText(data)
+  setTimeout("$('#sign-up').removeClass('in')",0)
+
   console.log(data)
+  goTop()
   $('#message').delay(3000).slideToggle()
   // store.user = data.user
 }
@@ -40,10 +41,11 @@ const welcomeText = function (data) {
   $('.lede').text(newLede)
 }
 
-const byeText = function (data) {
+const byeText = function () {
   const newLede = 'Thank you, you have been successfully logged out. Please continue traveling with us!'
   $('.lede').text(newLede)
 }
+
 const signInFailure = function (error) {
   console.log(error)
   $('#message').text('Error on signing in!')
@@ -56,6 +58,7 @@ const changePasswordSuccess = function (data) {
   $('#message').text('Change password Successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
+  goTop()
   $('#message').delay(3000).slideToggle()
 }
 
@@ -64,6 +67,7 @@ const changePasswordFailure = function (error) {
   $('#message').text('Error on changing password!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
+  goTop()
   $('#message').delay(3000).slideToggle()
 }
 
@@ -79,6 +83,10 @@ const signOutFailure = function (error) {
   $('#message').delay(3000).slideToggle()
 }
 
+const goTop = function () {
+  $('html, body').animate({ scrollTop: 0 }, 'fast')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -88,5 +96,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-  welcomeText
+  welcomeText,
+  goTop
 }

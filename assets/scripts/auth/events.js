@@ -10,9 +10,8 @@ const onSignUp = function () {
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then(() => api.signIn(data))
-    // .then(api.signIn)
-    .then(ui.signInSuccess)
+    // .then(() => api.signIn(data))
+    // .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 

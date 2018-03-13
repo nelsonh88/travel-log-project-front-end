@@ -1,9 +1,12 @@
 // const store = require('../store')
+const ui = require('../auth/ui')
 
 const createTripSuccess = function (data) {
   $('#message').text('Created a trip Successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
+  ui.goTop()
+  $('#message').delay(3000).slideToggle()
   setTimeout("$('#getalltripsdata').trigger('click')",0)
   console.log(data)
 }
@@ -79,14 +82,17 @@ const updateTripSuccess = function (data) {
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   console.log(data)
   $('form').trigger('reset')
+  ui.goTop()
+  $('#message').delay(3000).slideToggle()
   setTimeout("$('#getalltripsdata').trigger('click')",0)
-
 }
 
 const updateTripFailure = function (error) {
   console.log(error)
   $('#message').text('Error on updating trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
+  ui.goTop()
+  $('#message').delay(3000).slideToggle()
   $('form').trigger('reset')
 }
 
@@ -95,6 +101,8 @@ const deleteTripSuccess = function (data) {
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   console.log(data)
   $('form').trigger('reset')
+  ui.goTop()
+  $('#message').delay(3000).slideToggle()
   setTimeout("$('#getalltripsdata').trigger('click')",0)
 }
 
@@ -103,6 +111,8 @@ const deleteTripFailure = function (error) {
   $('#message').text('Error on deleting trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
+  ui.goTop()
+  $('#message').delay(3000).slideToggle()
 }
 
 module.exports = {
