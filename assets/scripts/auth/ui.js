@@ -7,11 +7,10 @@ const signUpSuccess = function (data) {
   $('#message').text('Congrats on signing up successfully! Please sign-in!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
-  setTimeout("$('#sign-up').removeClass('in')",0)
-
   console.log(data)
   goTop()
   $('#message').delay(3000).slideToggle()
+  $('#sign-up').delay(500).removeClass('in')
   // store.user = data.user
 }
 
