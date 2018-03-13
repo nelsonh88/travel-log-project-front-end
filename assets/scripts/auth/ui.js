@@ -29,7 +29,7 @@ const signInSuccess = function (data) {
   $('form').trigger('reset')
   $('body').addClass('logged-in')
   welcomeText(data)
-  setTimeout("$('#getalltripsdata').trigger('click')",0)
+  // setTimeout("$('#getalltripsdata').trigger('click')",0)
   console.log(data.user.first_name)
   // below is for the token
   store.user = data.user

@@ -3,6 +3,8 @@
 const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
+const tripsApi = require('../trips/api')
+const tripsUi = require('../trips/ui')
 
 const onSignUp = function () {
   event.preventDefault()
@@ -10,8 +12,6 @@ const onSignUp = function () {
   const data = getFormFields(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    // .then(() => api.signIn(data))
-    // .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 
@@ -21,6 +21,8 @@ const onSignIn = function () {
   const data = getFormFields(this)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(tripsApi.getTrips)
+    .then(tripsUi.getTripsSuccess)
     .catch(ui.signInFailure)
 }
 

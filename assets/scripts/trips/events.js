@@ -9,6 +9,8 @@ const onCreateTrip = function (event) {
   const data = getFormFields(event.target)
   api.createTrip(data)
     .then(ui.createTripSuccess)
+    .then(api.getTrips)
+    .then(ui.getTripsSuccess)
     .catch(ui.createTripFailure)
 }
 
@@ -34,6 +36,8 @@ const onUpdateTrip = function (event) {
   const data = getFormFields(event.target)
   api.updateTrip(data)
     .then(ui.updateTripSuccess)
+    .then(api.getTrips)
+    .then(ui.getTripsSuccess)
     .catch(ui.updateTripFailure)
 }
 
@@ -43,6 +47,8 @@ const onDeleteTrip = function (event) {
   const trip = data.trip
   api.deleteTrip(trip.id)
     .then(ui.deleteTripSuccess)
+    .then(api.getTrips)
+    .then(ui.getTripsSuccess)
     .catch(ui.deleteTripFailure)
 }
 
@@ -55,5 +61,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetTrips
 }

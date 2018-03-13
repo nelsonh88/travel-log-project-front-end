@@ -7,7 +7,7 @@ const createTripSuccess = function (data) {
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()
-  setTimeout("$('#getalltripsdata').trigger('click')",0)
+  // setTimeout("$('#getalltripsdata').trigger('click')",0)
   console.log(data)
 }
 
@@ -84,7 +84,7 @@ const updateTripSuccess = function (data) {
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()
-  setTimeout("$('#getalltripsdata').trigger('click')",0)
+  // setTimeout("$('#getalltripsdata').trigger('click')",0)
 }
 
 const updateTripFailure = function (error) {
@@ -103,7 +103,7 @@ const deleteTripSuccess = function (data) {
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()
-  setTimeout("$('#getalltripsdata').trigger('click')",0)
+  // setTimeout("$('#getalltripsdata').trigger('click')",0)
 }
 
 const deleteTripFailure = function (error) {
