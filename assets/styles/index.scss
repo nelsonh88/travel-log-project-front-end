@@ -189,3 +189,9 @@ footer {
     bottom: 0;
     color: #019ff0;
 }
+
+body.container-fluid {
+    padding: 0;
+    background-attachment: fixed;
+    background-image: url('http://nelsonhuezo.com/images/bigmap.png');
+}
