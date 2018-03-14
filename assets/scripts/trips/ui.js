@@ -7,8 +7,7 @@ const createTripSuccess = function (data) {
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()
-  // setTimeout("$('#getalltripsdata').trigger('click')",0)
-  console.log(data)
+  $('#create-trip').delay(500).removeClass('in')
 }
 
 const createTripFailure = function (error) {
