@@ -20,7 +20,7 @@ const createTripFailure = function (error) {
 const getTripsSuccess = function (data) {
   // $('#message').text('Brought back all trips successfully!')
   // $('#message').css('background-color', 'green')
-  console.log('getTripsSuccess: ', data.trips)
+  // console.log('getTripsSuccess: ', data.trips)
   // run foreach and build html output
   const tabletgt = document.getElementById('tabletarget')
   // empty out existing table data, then append new data
@@ -66,7 +66,7 @@ const getTripSuccess = function (data) {
   $('#message').text('Brought back a trip successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
-  console.log(data)
+  // console.log(data)
 }
 
 const getTripFailure = function (error) {
@@ -79,7 +79,7 @@ const getTripFailure = function (error) {
 const updateTripSuccess = function (data) {
   $('#message').text('Updated a trip successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()
@@ -98,7 +98,7 @@ const updateTripFailure = function (error) {
 const deleteTripSuccess = function (data) {
   $('#message').text('Deleted trip successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
-  console.log(data)
+  // console.log(data)
   $('form').trigger('reset')
   ui.goTop()
   $('#message').delay(3000).slideToggle()

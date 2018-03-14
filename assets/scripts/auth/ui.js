@@ -7,7 +7,6 @@ const signUpSuccess = function (data) {
   $('#message').text('Congrats on signing up successfully! Please sign-in!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
-  console.log(data)
   goTop()
   $('#message').delay(3000).slideToggle()
   $('#sign-up').delay(500).removeClass('in')
@@ -29,7 +28,7 @@ const signInSuccess = function (data) {
   $('body').addClass('logged-in')
   welcomeText(data)
   // setTimeout("$('#getalltripsdata').trigger('click')",0)
-  console.log(data.user.first_name)
+  // console.log(data.user.first_name)
   // below is for the token
   store.user = data.user
   $('#message').delay(3000).slideToggle()

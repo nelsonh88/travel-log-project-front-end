@@ -25,7 +25,7 @@ const onGetTrip = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const trip = data.trip
-  console.log(event)
+  // console.log(event)
   api.getTrip(trip.id)
     .then(ui.getTripSuccess)
     .catch(ui.getTripFailure)

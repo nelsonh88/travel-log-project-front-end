@@ -29,12 +29,10 @@ const onSignIn = function () {
 const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
 
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
-  console.log('change password!!!!')
 }
 
 const onSignOut = function (event) {
