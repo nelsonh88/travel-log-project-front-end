@@ -3,6 +3,17 @@
     <img src="http://nelsonhuezo.com/images/footprints1.svg" alt="footprint logo">
     <h1>Geo-Footprint</h1>
   </div>
+  <style>
+  .brand img{
+    width: 36px;
+  }
+
+  .brand h1 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2em;
+  }
+  </style>
   </header>
 
 Description:
