@@ -3,7 +3,7 @@
 <h2>Description:</br></h2>
 Geo-Footprint is a traveling log application that allows its users to sign-in and log there traveling adventures.  Once they have logged in trips, then they can look back in their profile and refer back to all the places they have traveled to with details.  In essence showing the user their footprints around the world. The deployed site can be found at https://nelsonh88.github.io/travel-log-project-front-end/ , enjoy!!
 
-<h2>How To Use:</br</h2>
+<h2>How To Use:</br></h2>
 - A user must sign in with an email that is registered with the app.  If the user has not already registered then the user can sign-up to make an account, then sign-in.</br>
 - Upon signing-in the user will be greeted.</br>
 - A user who has already logged in at least one trip will be able to see all their past trips once logging in.  If a new user sign-in they will not have any past trips diplayed since they have not logged any in, yet.</br>
