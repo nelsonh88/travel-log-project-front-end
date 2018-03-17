@@ -11,7 +11,7 @@ How To Use:
 - Once the trip has been saved the user will be able to see that trip immediately, under past trips.
 - The user can then update a trip and delete a trip using the trip ID that can be found under past trips.
 
-List of Technologies Used
+List of Technologies Used:
 - Atom
 - Git/GitHub
 - GitHub Enterprise Issue Queue
