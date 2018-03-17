@@ -1,20 +1,4 @@
-<header>
-  <div class="brand">
-    <img src="http://nelsonhuezo.com/images/footprints1.svg" alt="footprint logo">
-    <h1>Geo-Footprint</h1>
-  </div>
-  <style>
-  .brand img{
-    width: 36px;
-  }
-
-  .brand h1 {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 2em;
-  }
-  </style>
-  </header>
+<h1>Geo-Footprint</h1>
 
 Description:
 Geo-Footprint is a traveling log application that allows its users to sign-in and log there traveling adventures.  Once they have logged in trips, then they can look back in their profile and refer back to all the places they have traveled to with details.  In essence showing the user their footprints around the world.
