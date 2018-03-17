@@ -3,13 +3,13 @@
 <h2>Description:</br></h2>
 Geo-Footprint is a traveling log application that allows its users to sign-in and log there traveling adventures.  Once they have logged in trips, then they can look back in their profile and refer back to all the places they have traveled to with details.  In essence showing the user their footprints around the world. The deployed site can be found at https://nelsonh88.github.io/travel-log-project-front-end/ , enjoy!!
 
-<h2>How To Use:</h2>
-- A user must sign in with an email that is registered with the app.  If the user has not already registered then the user can sign-up to make an account, then sign-in.
-- Upon signing-in the user will be greeted.
-- A user who has already logged in at least one trip will be able to see all their past trips once logging in.  If a new user sign-in they will not have any past trips diplayed since they have not logged any in, yet.
-- The user can then log in a trip and input all the details that logging in a trip requires.  Once they have copleted the necessary fields they can hit save.
-- Once the trip has been saved the user will be able to see that trip immediately, under past trips.
-- The user can then update a trip and delete a trip using the trip ID that can be found under past trips.
+<h2>How To Use:</br</h2>
+- A user must sign in with an email that is registered with the app.  If the user has not already registered then the user can sign-up to make an account, then sign-in.</br>
+- Upon signing-in the user will be greeted.</br>
+- A user who has already logged in at least one trip will be able to see all their past trips once logging in.  If a new user sign-in they will not have any past trips diplayed since they have not logged any in, yet.</br>
+- The user can then log in a trip and input all the details that logging in a trip requires.  Once they have copleted the necessary fields they can hit save.</br>
+- Once the trip has been saved the user will be able to see that trip immediately, under past trips.</br>
+- The user can then update a trip and delete a trip using the trip ID that can be found under past trips.</br>
 
 <h2>List of Technologies Used:</h2>
 - Atom
