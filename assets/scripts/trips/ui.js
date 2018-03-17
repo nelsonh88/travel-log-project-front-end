@@ -10,8 +10,8 @@ const createTripSuccess = function (data) {
   $('#create-trip').delay(500).removeClass('in')
 }
 
-const createTripFailure = function (error) {
-  console.log(error)
+const createTripFailure = function () {
+  // console.log(error)
   $('#message').text('Error on creating a trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
@@ -56,8 +56,8 @@ const getTripsSuccess = function (data) {
   })
 }
 
-const getTripsFailure = function (error) {
-  console.log(error)
+const getTripsFailure = function () {
+  // console.log(error)
   $('#message').text('Error on getting trips!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
 }
@@ -69,8 +69,8 @@ const getTripSuccess = function (data) {
   // console.log(data)
 }
 
-const getTripFailure = function (error) {
-  console.log(error)
+const getTripFailure = function () {
+  // console.log(error)
   $('#message').text('Error on getting trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
@@ -86,8 +86,8 @@ const updateTripSuccess = function (data) {
   // setTimeout("$('#getalltripsdata').trigger('click')",0)
 }
 
-const updateTripFailure = function (error) {
-  console.log(error)
+const updateTripFailure = function () {
+  // console.log(error)
   $('#message').text('Error on updating trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   ui.goTop()
@@ -105,8 +105,8 @@ const deleteTripSuccess = function (data) {
   // setTimeout("$('#getalltripsdata').trigger('click')",0)
 }
 
-const deleteTripFailure = function (error) {
-  console.log(error)
+const deleteTripFailure = function () {
+  // console.log(error)
   $('#message').text('Error on deleting trip!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')

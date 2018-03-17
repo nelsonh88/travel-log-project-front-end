@@ -13,11 +13,12 @@ const signUpSuccess = function (data) {
   // store.user = data.user
 }
 
-const signUpFailure = function (error) {
-  console.log(error)
+const signUpFailure = function () {
+  // console.log(error)
   $('#message').text('Error on signing up!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
+  goTop()
   $('#message').delay(3000).slideToggle()
 }
 
@@ -44,24 +45,25 @@ const byeText = function () {
   $('.lede').text(newLede)
 }
 
-const signInFailure = function (error) {
-  console.log(error)
+const signInFailure = function () {
+  // console.log(error)
   $('#message').text('Error on signing in!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
+  goTop()
   $('#message').delay(3000).slideToggle()
 }
 
 const changePasswordSuccess = function (data) {
-  $('#message').text('Change password Successfully!')
+  $('#message').text('Changed password Successfully!')
   $('#message').removeClass('alert-danger').addClass('alert-success').show()
   $('form').trigger('reset')
   goTop()
   $('#message').delay(3000).slideToggle()
 }
 
-const changePasswordFailure = function (error) {
-  console.log(error)
+const changePasswordFailure = function () {
+  // console.log(error)
   $('#message').text('Error on changing password!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('form').trigger('reset')
@@ -74,8 +76,8 @@ const signOutSuccess = function (data) {
   byeText()
 }
 
-const signOutFailure = function (error) {
-  console.log(error)
+const signOutFailure = function () {
+  // console.log(error)
   $('#message').text('Error on signing out!')
   $('#message').removeClass('alert-success').addClass('alert-danger').show()
   $('#message').delay(3000).slideToggle()
