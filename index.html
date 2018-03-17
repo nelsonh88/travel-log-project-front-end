@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Geo-Footprint</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel='icon' type='image/png' sizes='16x16' href='http://nelsonhuezo.com/images/geo-footprint-favicon-16x16.png'>
+
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <div class="wrapper">
+      <header>
+        <div class="brand">
+          <img src="http://nelsonhuezo.com/images/footprints1.svg" alt="footprint logo">
+          <h1>Geo-Footprint</h1>
+        </div>
+        <ul class="mainmenu">
+          <li>
+            <img src="http://nelsonhuezo.com/images/menu.svg" alt="hamburger menu">
+            <!-- <a href="#">Menu</a> -->
+          </li>
+          <ul class="submenu">
+            <li> <a id="sign-out" href="#">Sign Out</a></li>
+            <!-- <li><a data-toggle="modal" data-target="#changepassword-modal" href="#">Change<br/>Password</a></li> -->
+          </ul>
+        </ul>
+          <p id="message" class="alert" role="alert"></p>
+        <section class="lede">Welcome to Geo-Footprint, the application that lets you store your travel adventures.</section>
+      </header>
+
+      <div class="pageContent">
+        <div class="loginforms">
+        <p>Don't have an account? <a class="" data-toggle="collapse" href="#sign-up" role="button" aria-expanded="false" aria-controls="collapseExample">Sign-Up!</a>
+        </p>
+      <form id="sign-up" class="border collapse">
+        <fieldset>
+            <div class="form-group">
+              <label for="signup-firstname">First Name</label>
+              <input id="signup-firstname" class="form-control" type="text" name="credentials[first_name]" placeholder="First Name">
+              <label for="signup-lastname">Last Name</label>
+              <input id="signup-lastname" class="form-control" type="text" name="credentials[last_name]" placeholder="Last Name">
+              <label for="signup-email">Email</label>
+              <input id="signup-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" class="form-control" type="password" name="credentials[password]" placeholder="Password">
+              <label for="signup-confrim-password">Confirm Password</label>
+              <input id="signup-confrim-password" class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Sign up!">
+        </fieldset>
+      </form>
+        <form id="sign-in" class="border">
+        <fieldset>
+            <div class="form-group">
+              <legend>Sign in!</legend>
+              <label for="signin-email">Email</label>
+              <input id="signin-email" class="form-control" type="text" name="credentials[email]" placeholder="Email">
+              <label for="signin-password">Password</label>
+              <input id="signin-password" class="form-control" type="password" name="credentials[password]" placeholder="password">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Sign-in">
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="appinfo">
+
+      <!-- Modal -->
+      <!-- <div class="modal fade" id="changepassword-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changepassword-modal-label">Change Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password" class="border">
+                <fieldset>
+                  <div class="form-group">
+                  <label class="requiredfield" for="change-password-oldpassword">* Old Password</label>
+                  <input id="change-password-oldpassword" class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+                  <label class="requiredfield" for="change-password-newpassword">* New Password</label>
+                  <input id="change-password-newpassword" class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+                </div>
+                <input class="btn btn-primary" type="submit" value="Change Password!">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </fieldset>
+            </form>
+            </div> -->
+            <!-- <div class="modal-footer"> -->
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <!-- </div> -->
+          <!-- </div>
+        </div>
+      </div> -->
+
+      <a class="btn btn-primary" data-toggle="collapse" href="#create-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Log New Trip!</a>
+      <form id="create-trip" class="border collapse">
+        <p id="tripMessage" class="alert" role="alert"></p>
+        <fieldset>
+            <div class="form-group">
+          <legend>Enter Trip Details</legend>
+          <label for="create-trip-locationname">Location Name</label>
+          <input id="create-trip-locationname" class="form-control" type="text" name="trip[location_name]" placeholder="City, State Country">
+          <label for="create-trip-travemates">Travel Mates</label>
+          <input id="create-trip-travemates" class="form-control" type="text" name="trip[travel_mates]" placeholder="Names of people traveling with you">
+          <label for="create-trip-date">Trip Date</label>
+          <input id="create-trip-date" class="form-control" type="text" name="trip[date]" placeholder="yyyy-mm-dd">
+          <label for="create-trip-description">Trip Description</label>
+          <input id="create-trip-description" class="form-control" type="text" name="trip[description]" placeholder=" What did you do? visit? etc">
+          </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Save Trip!">
+      </form>
+
+<div class="past-trips">
+  <h3>Past Trips</h3>
+  <div class="tablewrapper">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Location</th>
+      <th scope="col">Date</th>
+      <th scope="col">Buddies</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody id='tabletarget'>
+    <tr>
+      <!-- below on line 138 is the empty trips message I tried -->
+      <!-- <td colspan="5" class="notrips">You do not have any trips logged yet.</td> -->
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<a class="btn btn-primary" data-toggle="collapse" href="#update-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Update a Trip!</a>
+
+<form id="update-trip" class="border collapse">
+  <fieldset>
+    <div class="form-group">
+    <legend>Update a Trip</legend>
+    <label class="requiredfield"for="update-trip-tripid">* Trip ID</label>
+    <input id="create-trip-tripid" class="form-control" type="text" name="trip[id]" placeholder="Trip ID">
+    <label for="update-trip-triplocationname">Location Name</label>
+    <input id="create-trip-triplocationname" class="form-control" type="text" name="trip[location_name]" placeholder="Location Name">
+    <label for="update-trip-triptravelmates">Travel Mates</label>
+    <input id="create-trip-triptravelmates" class="form-control" type="text" name="trip[travel_mates]" placeholder="Travel Mates">
+    <label for="update-trip-tripdate">Date</label>
+    <input id="create-trip-tripdate" class="form-control" type="text" name="trip[date]" placeholder="yyyy-mm-dd">
+    <label for="update-trip-tripdescription">Description</label>
+    <input id="create-trip-tripdescription" class="form-control" type="text" name="trip[description]" placeholder="Trip Description">
+</div>
+  </fieldset>
+  <input class="btn btn-primary" type="submit" value="Update a Trip!">
+
+</form>
+
+<a class="btn btn-primary" data-toggle="collapse" href="#delete-trip" role="button" aria-expanded="false" aria-controls="collapseExample">Delete a Trip!</a>
+<form id="delete-trip" class="border collapse">
+  <fieldset>
+    <div class="form-group">
+    <legend>Delete a Trip</legend>
+    <label class="requiredfield"for="update-trip-tripid">* Trip ID</label>
+    <input id="delete-trip-tripdid" class="form-control" type="text" name="trip[id]" placeholder="Trip ID Here">
+</div>
+  </fieldset>
+  <input class="btn btn-primary" type="submit" value="Delete a Trip!">
+</form>
+<a class="btn btn-primary" data-toggle="collapse" href="#change-password" role="button" aria-expanded="false" aria-controls="collapseExample">Change Password!</a>
+<form id="change-password" class="border collapse">
+        <fieldset>
+          <div class="form-group">
+          <legend>Change Password</legend>
+          <label class="requiredfield" for="change-password-old">* Old Password</label>
+          <input id="change-password-old" class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+          <label class="requiredfield" for="change-password-new">* New Password</label>
+          <input id="change-password-new" class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+        </div>
+        </fieldset>
+        <input class="btn btn-primary" type="submit" value="Change Password!">
+    </form>
+
+    </div>
+
+    <form id="get-trips" class="border">
+      <fieldset>
+        <legend>Look Up All Past Trips</legend>
+        <input id="getalltripsdata" type="submit" value="Get all Trips!">
+      </fieldset>
+    </form>
+
+    <form id="get-trip" class="border">
+      <fieldset>
+        <legend>Look Up A Past Trip</legend>
+        <input type="text" name="trip[id]" placeholder="Look Up By ID">
+        <button type="submit" value="border">Get Trip</button>
+      </fieldset>
+    </form>
+
+        </div>
+      </div>
+      <footer>&copy; Copyright 2018, Nelson Huezo</footer>
+    </body>
+</html>
